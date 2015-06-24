@@ -1,0 +1,6 @@
+#create data directory
+sudo mkdir /data/db
+#Give user properties accss
+isudo chown -R $USER /data/db
+#run process in background
+mongod --fork --logpath /var/log/mongod.log
