@@ -11,7 +11,7 @@ var items=require('./routes/items');
 
 var app = express();
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/todoApp', function(err) {
+mongoose.connect('mongodb://localhost/restApp', function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/items', items);
-
+//app.use('/getall',);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
